@@ -1,6 +1,7 @@
 html {
     overflow-x: hidden;
     overflow-y: scroll;
+    position: relative;
 }
 
 .app-title {
@@ -8,19 +9,6 @@ html {
     color: #f8f7fd;
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-}
-
-#add-sport {
-    background-color: #7a0019;
-    color:#f8f7fd;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    border-radius: 5px;
-    border: solid 2px #f8f7fd;
-}
-
-#sport-input {
-    border: solid 2px #7a0019;
 }
 
 button {
@@ -42,10 +30,38 @@ label {
     margin-right: 150px;
 }
 
-/* .sportImg {
-    float: left;
+#sport-input {
+    border: solid 2px #7a0019;
+}
+
+#add-sport {
+    background-color: #7a0019;
+    color:#f8f7fd;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    border-radius: 5px;
+    border: solid 2px #f8f7fd;
+}
+
+#sports-view {
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
     position: relative;
-} */
+  }
+
+.sportImg {
+    margin: 20px 10px 0px 0px;
+    float: left;
+    border-radius: 20px;
+    border: solid 2px #ffd75f;
+    position: relative;
+}
 
 .footer {
     position: fixed;
