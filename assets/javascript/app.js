@@ -22,18 +22,39 @@ function displaySportsImages () {
             var p = $("<p>").text("Rating: " + results[i].rating);
 
             var sportsImage = $("<img>");
+
+            sportsImage.addClass("sportImg");
         
-            sportsImage.attr("src", results[i].images.fixed_height.url);
+            sportsImage.attr("src",results[i].images.fixed_height_still.url);
 
-            sportsDiv.append(p);
-            sportsDiv.append(sportsImage);
+            sportsImage.attr("data-still", results[i].images.fixed_height_still.url);
 
-            $("#sports-view").append(sportsDiv);
+            sportsImage.attr("data-animate", results[i].images.fixed_height.url);
+
+            sportsImage.attr("data-state", "still");
+
+            sportsDiv.prepend(p);
+            sportsDiv.prepend(sportsImage);
+
+            $("#sports-view").prepend(sportsDiv);
           }
 
       });
     });
 }
+
+$(document).on("click", ".sportImg", function() {
+
+    var state = $(this).attr("data-state");
+    
+    if (state == "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+  });
 
 function renderButtons() {
 
