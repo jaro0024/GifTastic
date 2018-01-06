@@ -3,7 +3,7 @@ $(function () {
     renderButtons();
 })
 
-var topics = ["Golf", "MLB", "NBA", "NCAA basketball", "NCAA football", "NFL", "NHL", "Soccer", "Tennis", "Volleyball"];
+var topics = ["Golf", "MLB", "NBA", "NCAA Basketball", "NCAA Football", "NFL", "NHL"];
 
 function displaySportsImages() {
 
@@ -20,7 +20,7 @@ function displaySportsImages() {
 
         for (var i = 0; i < results.length; i++) {
 
-            var sportsDiv = $("<div>");
+            var sportsDiv = $("<div class='sports-div'>");
 
             var p = $("<p>").text("Rating: " + results[i].rating);
 
