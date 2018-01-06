@@ -46,22 +46,24 @@ label {
 #sports-view {
     margin-top: 20px;
     margin-bottom: 100px;
-  }
+}
 
-  p {
+p {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    position: relative;
-
+    /* position: relative; */
+    float: left;
   }
 
 .sportImg {
     margin: 20px 10px 0px 0px;
     float: left;
+    width: 200px;
+    height: 200px; 
     border-radius: 20px;
     border: solid 2px #ffd75f;
-    position: relative;
+    /* position: relative; */
 }
 
 .footer {
