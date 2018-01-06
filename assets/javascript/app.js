@@ -7,50 +7,50 @@ var topics = ["Golf", "MLB", "NBA", "NCAA basketball", "NCAA football", "NFL", "
 
 function displaySportsImages() {
 
-        var sport = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + "&api_key=dc6zaTOxFJmzC&rating=g&rating-pg&limit=10";
+    var sport = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + "&api_key=dc6zaTOxFJmzC&rating=g&rating-pg&limit=10";
 
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).done(function (response) {
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function (response) {
 
-            var results = response.data;
-            $("#sports-view").empty();
+        var results = response.data;
+        $("#sports-view").empty();
 
-            for (var i = 0; i < results.length; i++) {
-                
-                var sportsDiv = $("<div class='sport'>");
+        for (var i = 0; i < results.length; i++) {
 
-                var p = $("<p>").text("Rating: " + results[i].rating);
-                
-                var sportsImage = $("<img>");
+            var sportsDiv = $("<div>");
 
-                sportsImage.addClass("sportImg");
+            var p = $("<p>").text("Rating: " + results[i].rating);
 
-                sportsImage.attr("src", results[i].images.downsized_still.url);
-                sportsImage.attr("data-still", results[i].images.downsized_still.url);
-                sportsImage.attr("data-animate", results[i].images.downsized.url);
-                sportsImage.attr("data-state", "still");
+            var sportsImage = $("<img>");
 
-                sportsDiv.append(p);
-                sportsDiv.append(sportsImage);
+            sportsImage.addClass("sportImg");
 
-                $("#sports-view").append(sportsDiv);
-            }
-        });
+            sportsImage.attr("src", results[i].images.downsized_still.url);
+            sportsImage.attr("data-still", results[i].images.downsized_still.url);
+            sportsImage.attr("data-animate", results[i].images.downsized.url);
+            sportsImage.attr("data-state", "still");
+
+            sportsDiv.append(p);
+            sportsDiv.append(sportsImage);
+
+            $("#sports-view").append(sportsDiv);
+        }
+    });
 }
 
 $("button").on("click", displaySportsImages);
 
 $(document).on("click", ".sportImg", function () {
 
-    var state = $(this).attr("data-state");    
+    var state = $(this).attr("data-state");
 
     if (state == "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
-    } 
+    }
     else {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
