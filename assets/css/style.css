@@ -28,6 +28,10 @@ button {
     border: solid 2px #7a0019;
 }
 
+button:hover {
+    background-color: #f5ba08;
+}
+
 label {
     color:#0f0f0f;
     font-weight: bold;
@@ -50,7 +54,11 @@ label {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     border-radius: 5px;
     border: solid 2px #f8f7fd;
-    padding-bottom: 5px;
+    padding: 3px 5px 5px 5px;
+}
+
+#add-sport:hover {
+    background-color: #970623;
 }
 
 #sports-view {
@@ -71,8 +79,8 @@ p {
 .sportImg {
     width: 300px;
     height: 200px; 
-    border-radius: 20px;
-    border: solid 2px #ffd75f;
+    border-radius: 10px;
+    border: solid 3px #7a0019;
 }
 
 .footer {
