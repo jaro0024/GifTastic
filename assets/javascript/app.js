@@ -108,11 +108,19 @@ $("#add-sport").on("click", function (event) {
 
     // Grabbing and storing user input from the textbox
     var sport = $("#sport-input").val().trim();
-    // Adding topic from textbox input to the topics array
-    topics.push(sport);
 
-    // Calling function to add the buttons and execute their functionality on the page
-    renderButtons();
+    if (sport === "") {
+        return;
+    }
+    else {
+        // Adding topic from textbox input to the topics array
+        topics.push(sport);
+        // Clearing input box after submitting user input
+        $("#sport-input").val("");
+        // Calling function to add the buttons and execute their functionality on the page
+        renderButtons();
+    }
+
 });
 
 // Click event for the new buttons added by users with a class of "sport"
